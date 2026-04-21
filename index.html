@@ -481,7 +481,12 @@
                                 <div className={`px-3 py-2 rounded-lg text-xs font-bold border ${Object.keys(mirrors).length >= level.maxMirrors ? 'bg-red-500/20 text-red-400 border-red-500/50' : 'bg-slate-800 text-cyan-400 border-cyan-500/50'}`}>
                                     거울: {Object.keys(mirrors).length} / {level.maxMirrors}
                                 </div>
-                                <button onClick={() => {setMirrors({}); setIsFired(false);}} className="btn-press px-3 py-2 bg-slate-800 text-slate-300 rounded-lg text-xs border border-slate-700">
+                                {highestCleared >= 5 && currentLevelIdx >= 5 && (
+                                    <button onClick={() => setView('report')} className="btn-press px-3 py-2 bg-yellow-500/20 text-yellow-400 rounded-lg text-xs border border-yellow-500/50 font-bold whitespace-nowrap">
+                                        보고서 제출
+                                    </button>
+                                )}
+                                <button onClick={() => {setMirrors({}); setIsFired(false);}} className="btn-press px-3 py-2 bg-slate-800 text-slate-300 rounded-lg text-xs border border-slate-700 whitespace-nowrap">
                                     초기화
                                 </button>
                             </div>
