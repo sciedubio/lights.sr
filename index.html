@@ -3,6 +3,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <!-- 표준 모바일 웹 앱 설정 추가 -->
+    <meta name="mobile-web-app-capable" content="yes">
+    <!-- 구형 iOS 사파리 호환성 유지 -->
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="theme-color" content="#0f172a">
     <title>상호작용형 과학 시뮬레이션 - 빛의 반사</title>
@@ -10,8 +13,8 @@
     <!-- Fonts -->
     <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;400;700;900&display=swap" rel="stylesheet">
     
-    <!-- Tailwind CSS -->
-    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Tailwind CSS (버전 고정) -->
+    <script src="https://cdn.tailwindcss.com/3.4.1"></script>
     <script>
         tailwind.config = {
             theme: {
@@ -28,10 +31,11 @@
         }
     </script>
     
-    <!-- React & Babel -->
-    <script crossorigin src="https://unpkg.com/react@18/umd/react.production.min.js"></script>
-    <script crossorigin src="https://unpkg.com/react-dom@18/umd/react-dom.production.min.js"></script>
-    <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+    <!-- React & Babel (버전 고정) -->
+    <script crossorigin src="https://unpkg.com/react@18.2.0/umd/react.production.min.js"></script>
+    <script crossorigin src="https://unpkg.com/react-dom@18.2.0/umd/react-dom.production.min.js"></script>
+    <!-- Babel: data-presets="react" 추가 및 버전 고정 -->
+    <script src="https://unpkg.com/@babel/standalone@7.23.9/babel.min.js"></script>
     
     <style>
         body {
@@ -109,7 +113,8 @@
 <body>
     <div id="root"></div>
 
-    <script type="text/babel">
+    <!-- Babel: data-presets="react" 추가 -->
+    <script type="text/babel" data-presets="react">
         const { useState, useEffect, useCallback, useMemo } = React;
 
         const GOOGLE_SCRIPT_URL = ""; 
